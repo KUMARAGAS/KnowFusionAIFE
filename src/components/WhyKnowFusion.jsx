@@ -105,7 +105,7 @@ export default function WhyKnowFusion() {
   const [activeScenario, setActiveScenario] = useState('tcp');
 
   return (
-    <section className="w-full bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-900 py-20 px-6 md:px-16 lg:px-24" id="features">
+    <section className="w-full bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-900 py-16 px-6 md:px-16 lg:px-24" id="features">
       <div className="max-w-6xl mx-auto">
 
         {/* ============ HEADER ============ */}
@@ -114,52 +114,56 @@ export default function WhyKnowFusion() {
             Why KnowFusion?
           </span>
           <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-4">
-            "Can't I Just Upload My PDF to ChatGPT?"
+            &ldquo;Can&rsquo;t I Just Upload My PDF to ChatGPT?&rdquo;
           </h2>
-          <p className="text-lg text-slate-500 dark:text-slate-400 max-w-3xl mx-auto">
-            It's a fair question. Here's the honest answer: ChatGPT is a general assistant that <em>can</em> read PDFs. 
+          <p className="text-base text-slate-500 dark:text-slate-400 max-w-3xl mx-auto leading-[1.6]">
+            It&rsquo;s a fair question. Here&rsquo;s the honest answer: ChatGPT is a general assistant that <em>can</em> read PDFs. 
             KnowFusion is a dedicated study platform <em>built</em> for your lecture notes — with persistent memory, 
-            source-grounded architecture, and academic structure that general AI tools simply don't have.
+            source-grounded architecture, and academic structure that general AI tools simply don&rsquo;t have.
           </p>
         </div>
 
         {/* ============ DIRECT WORKFLOW COMPARISON ============ */}
         <div className="mb-16">
-          <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-200 text-center mb-2">
+          <h3 className="text-xl font-semibold text-slate-800 dark:text-slate-200 text-center mb-2">
             Upload PDF to ChatGPT vs Upload PDF to KnowFusion
           </h3>
           <p className="text-sm text-slate-400 dark:text-slate-500 text-center mb-8">
             Follow the same task through both tools. The difference is in what happens next.
           </p>
 
-          <div className="space-y-4">
+          <div className="space-y-5">
             {uploadVsKnowFusion.map(({ step, title, chatGPT, knowFusion, verdict }) => (
-              <div key={step} className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm p-5 md:p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 font-bold text-sm flex items-center justify-center">
+              <div key={step} className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm p-6 md:p-8">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 font-bold text-sm flex items-center justify-center shrink-0">
                     {step}
                   </div>
-                  <h4 className="font-bold text-slate-800 dark:text-slate-200">{title}</h4>
+                  <h4 className="font-semibold text-slate-800 dark:text-slate-200">{title}</h4>
                   <div className="ml-auto">
-                    <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${verdict === 'knowfusion' ? 'bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300' : 'bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400'}`}>
+                    <span className={`text-xs font-bold px-3 py-1.5 rounded-full ${
+                      verdict === 'knowfusion'
+                        ? 'bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300'
+                        : 'bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400'
+                    }`}>
                       {verdict === 'knowfusion' ? 'KnowFusion wins' : 'Similar'}
                     </span>
                   </div>
                 </div>
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="bg-slate-50 dark:bg-slate-800/80 rounded-xl p-4 border border-slate-100 dark:border-slate-700">
-                    <div className="flex items-center gap-2 mb-2">
-                      <div className="w-5 h-5 rounded-full bg-slate-300 dark:bg-slate-600 flex items-center justify-center text-[10px] font-bold text-white">G</div>
-                      <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide">General AI (ChatGPT)</span>
+                <div className="grid md:grid-cols-2 gap-5">
+                  <div className="bg-slate-50 dark:bg-slate-800/80 rounded-xl p-5 border border-slate-100 dark:border-slate-700">
+                    <div className="flex items-center gap-2 mb-3">
+                      <div className="w-5 h-5 rounded-full bg-slate-300 dark:bg-slate-600 flex items-center justify-center text-[10px] font-bold text-white shrink-0">G</div>
+                      <span className="text-sm font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">General AI (ChatGPT)</span>
                     </div>
-                    <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">{chatGPT}</p>
+                    <p className="text-base text-slate-600 dark:text-slate-300 leading-[1.6]">{chatGPT}</p>
                   </div>
-                  <div className="bg-indigo-50 dark:bg-indigo-900/30 rounded-xl p-4 border border-indigo-100 dark:border-indigo-800">
-                    <div className="flex items-center gap-2 mb-2">
-                      <Sparkles className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
-                      <span className="text-xs font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-wide">KnowFusion</span>
+                  <div className="bg-indigo-50 dark:bg-indigo-900/30 rounded-xl p-5 border border-indigo-100 dark:border-indigo-800">
+                    <div className="flex items-center gap-2 mb-3">
+                      <Sparkles className="w-4 h-4 text-indigo-600 dark:text-indigo-400 shrink-0" />
+                      <span className="text-sm font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">KnowFusion</span>
                     </div>
-                    <p className="text-sm text-indigo-700 dark:text-indigo-300 leading-relaxed">{knowFusion}</p>
+                    <p className="text-base text-indigo-700 dark:text-indigo-300 leading-[1.6]">{knowFusion}</p>
                   </div>
                 </div>
               </div>
@@ -169,7 +173,7 @@ export default function WhyKnowFusion() {
 
         {/* ============ SIDE-BY-SIDE SCENARIO COMPARISON ============ */}
         <div className="mb-16">
-          <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-200 text-center mb-2">See the Difference Yourself</h3>
+          <h3 className="text-xl font-semibold text-slate-800 dark:text-slate-200 text-center mb-2">See the Difference Yourself</h3>
           <p className="text-sm text-slate-400 dark:text-slate-500 text-center mb-8">Same question asked to ChatGPT vs KnowFusion using the same lecture PDF</p>
 
           <div className="flex justify-center gap-3 mb-8 flex-wrap">
@@ -177,7 +181,7 @@ export default function WhyKnowFusion() {
               <button
                 key={s}
                 onClick={() => setActiveScenario(s)}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                className={`px-5 py-2.5 rounded-lg text-sm font-medium transition-colors ${
                   activeScenario === s
                     ? 'bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-700'
                     : 'bg-white dark:bg-slate-800 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-500'
@@ -190,46 +194,46 @@ export default function WhyKnowFusion() {
 
           <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-white dark:bg-slate-800 rounded-2xl border-2 border-slate-200 dark:border-slate-700 shadow-sm overflow-hidden">
-              <div className="bg-slate-100 dark:bg-slate-700 px-5 py-3 flex items-center gap-2">
-                <div className="w-6 h-6 rounded-full bg-slate-300 dark:bg-slate-500 flex items-center justify-center text-xs font-bold text-white">G</div>
-                <span className="font-semibold text-slate-700 dark:text-slate-200 text-sm">General AI (ChatGPT)</span>
+              <div className="bg-slate-100 dark:bg-slate-700 px-6 py-4 flex items-center gap-2">
+                <div className="w-6 h-6 rounded-full bg-slate-300 dark:bg-slate-500 flex items-center justify-center text-xs font-bold text-white shrink-0">G</div>
+                <span className="text-sm font-bold uppercase tracking-wider text-slate-700 dark:text-slate-200">General AI (ChatGPT)</span>
               </div>
-              <div className="p-5">
-                <p className="text-xs text-slate-400 dark:text-slate-500 font-mono mb-3">
+              <div className="p-6">
+                <p className="text-xs text-slate-400 dark:text-slate-500 font-mono mb-4 leading-[1.6]">
                   Q: {activeScenario === 'tcp' ? 'Explain the TCP 3-way handshake as covered in Lecture 4' : activeScenario === 'machine-learning' ? 'What are the types of machine learning discussed in the lecture?' : 'Explain supply and demand elasticity from the course material'}
                 </p>
-                <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="text-base text-slate-600 dark:text-slate-300 leading-[1.6]">
                   {activeScenario === 'tcp'
                     ? '"TCP uses a three-way handshake: SYN, SYN-ACK, ACK. This is a standard networking concept..."'
                     : activeScenario === 'machine-learning'
                     ? '"Machine learning has three main types: supervised, unsupervised, and reinforcement learning..."'
                     : '"Supply and demand elasticity measures how quantity responds to price changes..."'}
                 </p>
-                <div className="mt-4 flex items-center gap-2 text-xs text-rose-500 dark:text-rose-400 bg-rose-50 dark:bg-rose-900/30 px-3 py-2 rounded-lg">
-                  <XCircle className="w-3.5 h-3.5 shrink-0" />
-                  <span>Generic internet answer — may not match your professor's framework or examples</span>
+                <div className="mt-5 flex items-start gap-2.5 text-sm text-rose-500 dark:text-rose-400 bg-rose-50 dark:bg-rose-900/30 px-4 py-3 rounded-lg leading-[1.6]">
+                  <XCircle className="w-4 h-4 shrink-0 mt-0.5" />
+                  <span>Generic internet answer — may not match your professor&rsquo;s framework or examples</span>
                 </div>
               </div>
             </div>
 
             <div className="bg-white dark:bg-slate-800 rounded-2xl border-2 border-indigo-200 dark:border-indigo-700 shadow-sm overflow-hidden">
-              <div className="bg-gradient-to-r from-indigo-500 to-blue-500 px-5 py-3 flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-white" />
-                <span className="font-semibold text-white text-sm">KnowFusion</span>
+              <div className="bg-gradient-to-r from-indigo-500 to-blue-500 px-6 py-4 flex items-center gap-2">
+                <Sparkles className="w-4 h-4 text-white shrink-0" />
+                <span className="text-sm font-bold uppercase tracking-wider text-white">KnowFusion</span>
               </div>
-              <div className="p-5">
-                <p className="text-xs text-slate-400 dark:text-slate-500 font-mono mb-3">
+              <div className="p-6">
+                <p className="text-xs text-slate-400 dark:text-slate-500 font-mono mb-4 leading-[1.6]">
                   Q: {activeScenario === 'tcp' ? 'Explain the TCP 3-way handshake as covered in Lecture 4' : activeScenario === 'machine-learning' ? 'What are the types of machine learning discussed in the lecture?' : 'Explain supply and demand elasticity from the course material'}
                 </p>
-                <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="text-base text-slate-600 dark:text-slate-300 leading-[1.6]">
                   {activeScenario === 'tcp'
                     ? '"According to your Lecture 4 (pages 12-14): The TCP 3-way handshake consists of: Step 1: Client sends SYN to server. Step 2: Server responds with SYN-ACK. Step 3: Client sends ACK to confirm. [Source: Lecture_4.pdf, p.12-14]"'
                     : activeScenario === 'machine-learning'
                     ? '"Based on Lecture 3 (pages 8-11), your course covers two main types: Supervised learning (regression, classification) and Unsupervised learning (clustering). The lecture specifically uses the Iris dataset for classification examples. [Source: ML_Lecture_3.pdf, p.8-11]"'
                     : '"From Chapter 2 of your lecture notes (p.15-19): Price elasticity of demand = % change in quantity demanded / % change in price. Your professor classifies elasticity into three categories: elastic (>1), inelastic (<1), and unit elastic (=1). [Source: Economics_Ch2.pdf, p.15-19]"'}
                 </p>
-                <div className="mt-4 flex items-center gap-2 text-xs text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-900/30 px-3 py-2 rounded-lg">
-                  <CheckCircle className="w-3.5 h-3.5 shrink-0" />
+                <div className="mt-5 flex items-start gap-2.5 text-sm text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-900/30 px-4 py-3 rounded-lg leading-[1.6]">
+                  <CheckCircle className="w-4 h-4 shrink-0 mt-0.5" />
                   <span>Source-grounded answer with page citations from your actual lecture notes</span>
                 </div>
               </div>
@@ -238,17 +242,17 @@ export default function WhyKnowFusion() {
         </div>
 
         {/* ============ THE PROBLEM ============ */}
-        <div className="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-2xl p-6 md:p-8 mb-16">
-          <div className="flex items-start gap-3 mb-4">
-            <div className="p-2 rounded-lg bg-amber-100 dark:bg-amber-800 text-amber-700 dark:text-amber-300 shrink-0">
+        <div className="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-2xl p-8 mb-16">
+          <div className="flex items-start gap-4 mb-4">
+            <div className="p-2.5 rounded-lg bg-amber-100 dark:bg-amber-800 text-amber-700 dark:text-amber-300 shrink-0">
               <AlertTriangle className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="font-bold text-amber-900 dark:text-amber-200 text-lg">The Hidden Cost of Using General AI for Studying</h3>
-              <p className="text-amber-800 dark:text-amber-300 text-sm mt-1 max-w-3xl">
-                Uploading your lecture PDF to ChatGPT feels convenient. But consider: your professor's original material, 
+              <h3 className="font-semibold text-amber-900 dark:text-amber-200 text-lg">The Hidden Cost of Using General AI for Studying</h3>
+              <p className="text-base text-amber-800 dark:text-amber-300 mt-2 max-w-3xl leading-[1.6]">
+                Uploading your lecture PDF to ChatGPT feels convenient. But consider: your professor&rsquo;s original material, 
                 exam-focused content, and unpublished research is now being processed by a public AI service. 
-                You get a generic answer that <em>sounds</em> right but you can't verify. And next week when you need 
+                You get a generic answer that <em>sounds</em> right but you can&rsquo;t verify. And next week when you need 
                 that information again, the chat is gone and you start over. KnowFusion was designed from the ground up 
                 to solve these specific problems for students.
               </p>
@@ -258,18 +262,18 @@ export default function WhyKnowFusion() {
 
         {/* ============ WHAT MAKES KNOWFUSION DIFFERENT ============ */}
         <div className="mb-16">
-          <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-200 text-center mb-2">What Makes KnowFusion Architecturally Different</h3>
-          <p className="text-sm text-slate-400 dark:text-slate-500 text-center mb-10">It's not just a chat app with PDF upload — it's a document intelligence platform</p>
+          <h3 className="text-xl font-semibold text-slate-800 dark:text-slate-200 text-center mb-2">What Makes KnowFusion Architecturally Different</h3>
+          <p className="text-sm text-slate-400 dark:text-slate-500 text-center mb-10">It&rsquo;s not just a chat app with PDF upload — it&rsquo;s a document intelligence platform</p>
 
           <div className="grid md:grid-cols-2 gap-6">
             {architectureDiff.map(({ Icon, title, desc }) => (
-              <div key={title} className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm p-6 flex gap-4 hover:shadow-md transition-shadow">
+              <div key={title} className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm p-6 md:p-8 flex gap-4 hover:shadow-md transition-shadow">
                 <div className="p-3 rounded-xl bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400 shrink-0 h-fit">
                   <Icon className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-slate-800 dark:text-slate-200 mb-1">{title}</h4>
-                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">{desc}</p>
+                  <h4 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">{title}</h4>
+                  <p className="text-base text-slate-500 dark:text-slate-400 leading-[1.6]">{desc}</p>
                 </div>
               </div>
             ))}
@@ -280,13 +284,13 @@ export default function WhyKnowFusion() {
         {/* ============ STATS ROW ============ */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-16">
           {stats.map(({ value, label, desc, Icon, color }) => (
-            <div key={label} className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm p-6 text-center hover:shadow-md transition-shadow">
+            <div key={label} className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm p-8 text-center hover:shadow-md transition-shadow">
               <div className={`inline-flex p-3 rounded-xl ${color} mb-4`}>
                 <Icon className="w-6 h-6" />
               </div>
               <div className="text-2xl md:text-3xl font-extrabold text-slate-900 dark:text-white">{value}</div>
-              <div className="text-sm font-semibold text-slate-700 dark:text-slate-300 mt-1">{label}</div>
-              <div className="text-xs text-slate-400 dark:text-slate-500 mt-1 leading-relaxed">{desc}</div>
+              <div className="text-sm font-semibold text-slate-700 dark:text-slate-300 mt-2">{label}</div>
+              <div className="text-sm text-slate-400 dark:text-slate-500 mt-2 leading-[1.6]">{desc}</div>
             </div>
           ))}
         </div>
@@ -294,46 +298,50 @@ export default function WhyKnowFusion() {
         {/* ============ CHARTS ROW ============ */}
         <div className="grid md:grid-cols-2 gap-8 mb-16">
           <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm p-6 md:p-8">
-            <h3 className="text-lg font-bold text-slate-800 dark:text-slate-200 mb-1">Accuracy on Lecture-Specific Questions</h3>
+            <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-200 mb-2">Accuracy on Lecture-Specific Questions</h3>
             <p className="text-sm text-slate-400 dark:text-slate-500 mb-6">% of answers correctly grounded in your course material</p>
-            <ResponsiveContainer width="100%" height={280}>
-              <BarChart data={accuracyData} margin={{ top: 10, right: 10, bottom: 20, left: 0 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
-                <XAxis dataKey="name" tick={{ fontSize: 12, fill: '#64748b' }} tickLine={false} />
-                <YAxis domain={[0, 100]} tick={{ fontSize: 12, fill: '#64748b' }} tickLine={false} axisLine={false} tickFormatter={(v) => `${v}%`} />
-                <Tooltip content={({ active, payload, label }) => active && payload?.[0] && (
-                  <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg shadow-lg px-4 py-3">
-                    <p className="text-sm font-semibold text-slate-700 dark:text-slate-200">{label?.replace('\n', ' ')}</p>
-                    <p className="text-lg font-bold text-indigo-600 dark:text-indigo-400">{payload[0].value}%</p>
-                    <p className="text-xs text-slate-400 dark:text-slate-500">accuracy on lecture-specific Q&A</p>
-                  </div>
-                )} />
-                <Bar dataKey="accuracy" radius={[8, 8, 0, 0]} barSize={60} />
-              </BarChart>
-            </ResponsiveContainer>
-            <div className="flex items-center justify-center gap-6 mt-4 text-xs text-slate-500 dark:text-slate-400">
+            <div className="h-[280px]">
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart data={accuracyData} margin={{ top: 10, right: 10, bottom: 20, left: 0 }}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
+                  <XAxis dataKey="name" tick={{ fontSize: 12, fill: '#64748b' }} tickLine={false} />
+                  <YAxis domain={[0, 100]} tick={{ fontSize: 12, fill: '#64748b' }} tickLine={false} axisLine={false} tickFormatter={(v) => `${v}%`} />
+                  <Tooltip content={({ active, payload, label }) => active && payload?.[0] && (
+                    <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg shadow-lg px-4 py-3">
+                      <p className="text-sm font-semibold text-slate-700 dark:text-slate-200">{label?.replace('\n', ' ')}</p>
+                      <p className="text-lg font-bold text-indigo-600 dark:text-indigo-400">{payload[0].value}%</p>
+                      <p className="text-xs text-slate-400 dark:text-slate-500">accuracy on lecture-specific Q&amp;A</p>
+                    </div>
+                  )} />
+                  <Bar dataKey="accuracy" radius={[8, 8, 0, 0]} barSize={60} />
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
+            <div className="flex items-center justify-center gap-6 mt-5 text-xs text-slate-500 dark:text-slate-400">
               <span className="flex items-center gap-2"><span className="w-3 h-3 rounded-full bg-slate-400" /> General AI</span>
               <span className="flex items-center gap-2"><span className="w-3 h-3 rounded-full bg-indigo-500" /> KnowFusion</span>
             </div>
           </div>
 
           <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm p-6 md:p-8">
-            <h3 className="text-lg font-bold text-slate-800 dark:text-slate-200 mb-1">Why Students Choose KnowFusion</h3>
+            <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-200 mb-2">Why Students Choose KnowFusion</h3>
             <p className="text-sm text-slate-400 dark:text-slate-500 mb-6">Top priorities when choosing an academic AI tool</p>
-            <ResponsiveContainer width="100%" height={280}>
-              <PieChart>
-                <Pie data={preferenceData} cx="50%" cy="50%" innerRadius={60} outerRadius={100} paddingAngle={3} dataKey="value">
-                  {preferenceData.map((entry, i) => <Cell key={i} fill={entry.color} />)}
-                </Pie>
-                <Tooltip content={({ active, payload }) => active && payload?.[0] && (
-                  <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg shadow-lg px-4 py-3">
-                    <p className="text-sm font-semibold text-slate-700 dark:text-slate-200">{payload[0].name}</p>
-                    <p className="text-lg font-bold text-indigo-600 dark:text-indigo-400">{payload[0].value}%</p>
-                  </div>
-                )} />
-              </PieChart>
-            </ResponsiveContainer>
-            <div className="flex flex-wrap items-center justify-center gap-4 mt-2 text-xs text-slate-500 dark:text-slate-400">
+            <div className="h-[280px]">
+              <ResponsiveContainer width="100%" height="100%">
+                <PieChart>
+                  <Pie data={preferenceData} cx="50%" cy="50%" innerRadius={60} outerRadius={100} paddingAngle={3} dataKey="value">
+                    {preferenceData.map((entry, i) => <Cell key={i} fill={entry.color} />)}
+                  </Pie>
+                  <Tooltip content={({ active, payload }) => active && payload?.[0] && (
+                    <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg shadow-lg px-4 py-3">
+                      <p className="text-sm font-semibold text-slate-700 dark:text-slate-200">{payload[0].name}</p>
+                      <p className="text-lg font-bold text-indigo-600 dark:text-indigo-400">{payload[0].value}%</p>
+                    </div>
+                  )} />
+                </PieChart>
+              </ResponsiveContainer>
+            </div>
+            <div className="flex flex-wrap items-center justify-center gap-4 mt-3 text-xs text-slate-500 dark:text-slate-400">
               {preferenceData.map((entry) => (
                 <span key={entry.name} className="flex items-center gap-1.5">
                   <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: entry.color }} />
@@ -347,29 +355,29 @@ export default function WhyKnowFusion() {
         {/* ============ FULL COMPARISON TABLE ============ */}
         <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm overflow-hidden mb-16">
           <div className="px-6 md:px-8 pt-6 pb-4 border-b border-slate-100 dark:border-slate-700">
-            <h3 className="text-lg font-bold text-slate-800 dark:text-slate-200">Complete Feature Comparison</h3>
+            <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-200">Complete Feature Comparison</h3>
           </div>
           <div className="overflow-x-auto">
-            <table className="w-full text-sm">
+            <table className="w-full text-base">
               <thead>
                 <tr className="border-b border-slate-100 dark:border-slate-700">
-                  <th className="text-left px-6 md:px-8 py-4 font-semibold text-slate-500 dark:text-slate-400">Feature</th>
-                  <th className="text-center px-4 py-4 font-semibold text-slate-400 dark:text-slate-500 w-32">General AI</th>
-                  <th className="text-center px-4 py-4 font-semibold text-indigo-600 dark:text-indigo-400 w-32">KnowFusion</th>
+                  <th className="text-left px-6 md:px-8 py-5 font-semibold text-slate-500 dark:text-slate-400">Feature</th>
+                  <th className="text-center px-4 py-5 font-bold text-sm uppercase tracking-wider text-slate-400 dark:text-slate-500 w-40">General AI</th>
+                  <th className="text-center px-4 py-5 font-bold text-sm uppercase tracking-wider text-indigo-600 dark:text-indigo-400 w-40">KnowFusion</th>
                 </tr>
               </thead>
               <tbody>
                 {featureComparison.map((row, i) => (
                   <tr key={i} className="border-b border-slate-50 dark:border-slate-700/50 hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors">
-                    <td className="px-6 md:px-8 py-4 text-slate-700 dark:text-slate-300">{row.feature}</td>
-                    <td className="text-center px-4 py-4">
+                    <td className="px-6 md:px-8 py-5 text-slate-700 dark:text-slate-300">{row.feature}</td>
+                    <td className="text-center px-4 py-5">
                       {row.general === true
                         ? <CheckCircle className="w-5 h-5 text-green-500 mx-auto" />
                         : row.general === false
                         ? <XCircle className="w-5 h-5 text-red-300 mx-auto" />
-                        : <span className="text-amber-500 font-medium text-xs">{row.general}</span>}
+                        : <span className="text-amber-500 font-medium text-sm">{row.general}</span>}
                     </td>
-                    <td className="text-center px-4 py-4">
+                    <td className="text-center px-4 py-5">
                       {row.ours === true
                         ? <CheckCircle className="w-5 h-5 text-green-500 mx-auto" />
                         : <XCircle className="w-5 h-5 text-red-300 mx-auto" />}
@@ -392,7 +400,7 @@ export default function WhyKnowFusion() {
             <h3 className="text-2xl md:text-3xl font-bold mb-3">
               Your Lecture Notes. Your Knowledge Base. Your AI Assistant.
             </h3>
-            <p className="text-indigo-100 text-base max-w-2xl mx-auto mb-6">
+            <p className="text-indigo-100 text-base max-w-2xl mx-auto mb-6 leading-[1.6]">
               Not another chat interface. A dedicated study platform that understands your course material, 
               cites its sources, preserves your history, and protects your privacy.
             </p>

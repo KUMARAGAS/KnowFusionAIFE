@@ -7,21 +7,21 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['"Styrene B"', '"Space Grotesk"', 'system-ui', '-apple-system', 'sans-serif'],
-        serif: ['"Anthropic Serif"', '"Source Serif 4"', 'Georgia', 'serif'],
+        sans: ['"Almarai"', '"Styrene B"', '"Space Grotesk"', 'system-ui', '-apple-system', 'sans-serif'],
+        serif: ['"Almarai"', '"Anthropic Serif"', '"Source Serif 4"', 'Georgia', 'serif'],
         mono: ['ui-monospace', '"Cascadia Code"', '"JetBrains Mono"', 'Consolas', 'monospace'],
       },
       fontSize: {
-        xs: ['0.75rem', { lineHeight: '1.125rem' }],
-        sm: ['0.8125rem', { lineHeight: '1.25rem' }],
-        base: ['0.875rem', { lineHeight: '1.375rem' }],
-        lg: ['1rem', { lineHeight: '1.5rem' }],
-        xl: ['1.125rem', { lineHeight: '1.625rem' }],
-        '2xl': ['1.375rem', { lineHeight: '1.75rem' }],
-        '3xl': ['1.625rem', { lineHeight: '2rem' }],
-        '4xl': ['2rem', { lineHeight: '2.25rem' }],
-        '5xl': ['2.375rem', { lineHeight: '2.5rem' }],
-        '6xl': ['2.875rem', { lineHeight: '1.125' }],
+        xs: ['0.75rem', { lineHeight: '1rem' }],
+        sm: ['0.875rem', { lineHeight: '1.25rem' }],
+        base: ['1rem', { lineHeight: '1.5rem' }],
+        lg: ['1.125rem', { lineHeight: '1.75rem' }],
+        xl: ['1.25rem', { lineHeight: '1.75rem' }],
+        '2xl': ['1.5rem', { lineHeight: '2rem' }],
+        '3xl': ['1.875rem', { lineHeight: '2.25rem' }],
+        '4xl': ['2.25rem', { lineHeight: '2.5rem' }],
+        '5xl': ['3rem', { lineHeight: '1' }],
+        '6xl': ['3.75rem', { lineHeight: '1' }],
       },
       colors: {
         border: 'hsl(var(--border))',
